@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Text to Voice</title>
+  <link rel="icon" type="image/png/webp" href="istockphoto-1344512181-612x612.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="container">
+    <h1>👥 TEXT TO VOICE</h1>
+    <input type="text" placeholder="Enter the text" id="text" />
+    <br />
+    <button onclick="speak()">Speak</button>
+  </div>
+
+  <script>
+    function speak() {
+      const input = document.getElementById('text').value;
+      if (input.trim() === "") {
+        alert("Please enter some text!");
+        return;
+      }
+      const utterance = new SpeechSynthesisUtterance(input);
+      speechSynthesis.speak(utterance); // ✅ Corrected
+    }
+  </script>
+  
+</body>
+</html>
+
